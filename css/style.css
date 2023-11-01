@@ -1,0 +1,19 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-family: 'Exo 2', sans-serif !important;
+    color: #434343 !important;
+}
+
+a>li {
+    color: black;
+}
+
+a>li:hover {
+    color: rgb(156, 156, 156);
+    transition: 0.5s;
+}

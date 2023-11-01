@@ -1,0 +1,570 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,700;0,900;1,100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="plugin/pointer/pointer.css" />
+    <link rel="icon" href="images/array_icon.png">
+
+    <title>Manipulação de Arrays e Listas</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/white.css">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- CAPA -->
+            <section>
+                <h2 style="text-align: right;">
+                    Manipulação de Arrays e Listas
+                </h2>
+                <hr>
+                <p style="text-align: right;">
+                    Kelvin de Lucca Feltrin
+                </p>
+            </section>
+
+            <!-- TÓPICOS ABORDADOS -->
+            <section>
+                <h3>Tópicos Abordados</h3>
+                <div style="display: flex; font-size: 35px;">
+                    <ul>
+                        <a href="#/2">
+                            <li>Definição de Array em C#</li>
+                        </a>
+                        <a href="#/3">
+                            <li>Tipos de Array</li>
+                        </a>
+                        <a href="#/4">
+                            <li>Declaração e inicialização de Arrays</li>
+                        </a>
+                        <a href="#/5">
+                            <li>Principais métodos e propriedades do Array</li>
+                        </a>
+                        <a href="#/6">
+                            <li>Vantagens e desvantagens do Array</li>
+                        </a>
+                        <a href="#/7">
+                            <li>Definição de Lista em C#</li>
+                        </a>
+                    </ul>
+                    <ul>
+                        <a href="#/8">
+                            <li>Declaração e inicialização de Listas</li>
+                        </a>
+                        <a href="#/9">
+                            <li>Principais métodos e propriedades das Listas</li>
+                        </a>
+                        <a href="#/10">
+                            <li>Vantagens e desvantagens das Listas</li>
+                        </a>
+                        <a href="#/11">
+                            <li>Conteúdo sugerido</li>
+                        </a>
+                        <a href="#/12">
+                            <li>Bônus - List Patterns Matching</li>
+                        </a>
+                        <a href="#/13">
+                            <li>Referências</li>
+                        </a>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- DEFINIÇÃO DE ARRAY -->
+            <section>
+                <section>
+                    <h3>Definição de Array</h3>
+                    <blockquote>"Arrays podem ser definidos como séries, coleções ou listas de elementos, geralmente de um mesmo tipo de dados, armazenados de forma sequencial"</blockquote>
+                </section>
+
+                <section>
+                    <h3>Definição de Array</h3>
+                    <p style="text-align: left; font-weight: bold;">Array é uma estrutura de dados:</p>
+                    <ul>
+                        <li>Homogênea (dados do mesmo tipo)</li>
+                        <li>Ordenada (elementos acessados por meio de posições)</li>
+                        <li>Alocado de uma vez só, em um bloco contíguo de memória</li>
+                    </ul>
+                </section>
+            </section>
+
+            <!-- TIPOS DE ARRAY -->
+            <section>
+                <section>
+                    <h3>Tipos de Array</h3>
+                    <ul>
+                        <a href="#/3/1">
+                            <li>Array monodimensional (vetor)</li>
+                        </a><br>
+                        <a href="#/3/2">
+                            <li>Array de duas dimensões (matriz)</li>
+                        </a><br>
+                        <a href="#/3/3">
+                            <li>Array multidimensional</li>
+                        </a><br>
+                        <a href="#/3/4">
+                            <li>Arrays “Jagged”</li>
+                        </a>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Array monodimensional (vetor)</h3>
+                    <div style="display: flex;">
+                        <ul>
+                            <li>Cada elemento é identificado por um único índice</li>
+                            <li>Os índices de listas são “zero-based”</li>
+                        </ul>
+                        <img src="/images/array-monodimensional.jpg">
+                    </div>
+                </section>
+
+                <section>
+                    <h4>Array de duas dimensões (matriz)</h4>
+                    <div style="display: flex; align-items: center;">
+                        <img src="images/matriz.jpg">
+                        <ul>
+                            <li>Pode ser visualizado como uma tabela com linhas e colunas</li>
+                            <li>Linhas (horizontais)</li>
+                            <li>Colunas (verticais)</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Array multidimensional</h3>
+                    <div style="display: flex; align-items: center;">
+                        <ul>
+                            <li>Um array tridimensional pode ser representado como uma coleção de arrays de duas dimensões, e assim por diante</li>
+                            <li>Indicamos os índices citando primeiramente a linha, seguida da coluna e então as demais dimensões</li>
+                        </ul>
+                        <img src="/images/array-tridimensional.jpg">
+                    </div>
+                </section>
+
+                <section>
+                    <h3>Arrays “Jagged”</h3>
+                    <div style="display: flex; align-items: center;">
+                        <img src="images/jagged-array.png">
+                        <ul style="font-size: 30px;">
+                            <li>Cada elemento é um vetor</li>
+                            <li>Os elementos de um jagged array podem ser de diferentes dimensões e tamanhos</li>
+                            <li>Também pode ser chamado de "array-de-arrays"</li>
+                        </ul>
+                    </div>
+                </section>
+            </section>
+
+            <!-- DECLARAÇÃO E INICIALIZAÇÃO DE ARRAYS -->
+            <section>
+                <section>
+                    <h4>Declaração e inicialização de Arrays</h4>
+                    <pre><code class="language-csharp" data-trim data-noescape data-line-numbers="1-3|5-7|9-11">
+                        // Declaração de um vetor em C#
+                        int[] numeros; // Vetor de inteiros
+                        string[] nomes; // Vetor de strings
+
+                        // Declaração de uma matriz em C#
+                        int[,] matriz2dimensoes;
+                        decimal[,,] matriz3dimensoes;
+
+                        // Declaração de array jagged em C#
+                        int[][] vetorDeInteiros;
+                        float[][] vetorDeDecimais;
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h4>Declaração e inicialização de Arrays</h4>
+                    <pre><code class="language-csharp" data-trim data-noescape data-line-numbers="1-4|6-9|11-24">
+                        //Inicialização de vetor junto com a declaração
+                        int[] impares = new int[] { 1, 3, 5, 7, 9 };
+                        //ou
+                        int[] impares2 = { 1, 3, 5, 7, 9 };
+
+                        //Listagem 6: Inicialização de matriz junto com a declaração
+                        int[,] matriz = new int[,] { { 1, 2 }, { 3, 4 } };
+                        //ou
+                        int[,] matriz2 = { { 1, 2 }, { 3, 4 } };
+
+                        //Listagem 7: Inicialização de jagged array junto com a declaração
+                        int[][] jagged = new int[][]
+                        {
+                            new int[] {0,1,2,3},
+                            new int[] {4,5,6,7,8,9},
+                            new int[] {10,20,30,40}
+                        };
+                        //ou
+                        int[][] jagged2 =
+                        {
+                            new int[] {0,1,2,3},
+                            new int[] {4,5,6,7,8,9},
+                            new int[] {10,20,30,40}
+                        };
+                    </code></pre>
+                </section>
+            </section>
+
+            <!-- PRINCIPAIS MÉTODOS E PROPRIEDADES DO ARRAY -->
+            <section>
+                <section>
+                    <h3 style="font-size: 40px;">Principais métodos e propriedades do Array</h3>
+                    <div style="display: flex; justify-content: space-around;">
+                        <ul>
+                            <li>Array.BinarySearch()</li><br>
+                            <li>Array.Exist()</li><br>
+                            <li>Array.Find()</li><br>
+                            <li>Array.FindAll()</li>
+                        </ul>
+                        <ul>
+                            <li>Array.IndexOf()</li><br>
+                            <li>.Length</li><br>
+                            <li>.Reverse()</li><br>
+                            <li>.Sort()</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h3 style="font-size: 40px;">Principais métodos e propriedades do Array</h3>
+                    <pre><code class="language-csharp" data-trim data-noescape data-line-numbers="1-34|1-3|5-7|9-11|13-15|17-19|21-23|25-26|28-30|32-34">
+                        //Array.BinarySearch()
+                        int[] nums = { 1, 6, 12, 18, 32 };
+                        Console.WriteLine(Array.BinarySearch(nums, 12)); // 2
+
+                        //Array.Exist()
+                        string[] users = { "Steve", "Bob", "Shane", "Andrew" };
+                        Console.WriteLine(Array.Exists(users, user => user.StartsWith("S"))); // True
+
+                        //Array.Find()
+                        int[] arrFind = new int[] { 1, 2, 3, 4, 5 };
+                        Console.Write(Array.Find(arrFind, (elem) => elem % 2 == 0)); // 2
+
+                        //Array.FindAll()
+                        int[] arrFindAll = new int[] { 1, 2, 3, 4, 5 };
+                        var result = Array.FindAll(arrFindAll, (elem) => elem % 2 == 0); // 2 e 4
+
+                        //Array.IndexOf()
+                        string[] usersIndexOf = { "Smith", "John", "Clark", "Peter", "John" };
+                        Console.WriteLine(Array.IndexOf(usersIndexOf, "John")); // 1
+
+                        //Length Property
+                        int[] numbers = new int[] { 1, 2, 3, 4, 5 };
+                        int length = numbers.Length; // Returns 5
+
+                        int[,] matrix = new int[,] { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+                        int matrixLength = matrix.Length; // Returns 9 (3 rows * 3 columns)
+
+                        //Reverse() Method
+                        int[] numbersReverse = new int[] { 1, 2, 3, 4, 5 };
+                        Array.Reverse(numbersReverse); // Reverses the order of elements: { 5, 4, 3, 2, 1 }
+
+                        //Sort() Method
+                        int[] numbersSort = new int[] { 5, 3, 1, 4, 2 };
+                        Array.Sort(numbersSort); // Sorts the array in ascending order: { 1, 2, 3, 4, 5 }
+                    </code></pre>
+                </section>
+            </section>
+
+            <!-- VANTAGENS E DESVANTAGENS DO ARRAY -->
+            <section>
+                <h3>Vantagens e desvantagens do Array</h3>
+                <br>
+                <div style="display: flex; justify-content: space-between;">
+                    <div>
+                        <p style="background: #99BF2B; color: white !important; margin: 0;">
+                            Vantagens
+                        </p>
+                        <ul>
+                            <li>Acesso imediato aos elementos pela sua posição</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <p style="background: #E75847; color: white !important; margin: 0;">
+                            Desvantagens
+                        </p>
+                        <ul>
+                            <li>Tamanho fixo</li>
+                            <li>Dificuldade para se realizar inserções e deleções</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- DEFINIÇÃO DE LISTA EM C# -->
+            <section>
+                <section>
+                    <h3>Definição de Lista em C#</h3>
+                    <blockquote>"As listas em C# fazem parte do namespace System.Collections.Generic e são usadas para armazenar e gerenciar uma coleção de objetos.<br> Eles têm tamanho dinâmico, permitindo adicionar ou remover elementos em tempo de execução e podem
+                        armazenar itens de qualquer tipo de dados, incluindo tipos personalizados."
+                    </blockquote>
+                </section>
+
+                <section>
+                    <h3>Definição de Lista em C#</h3>
+                    <p style="text-align: left; font-weight: bold;">Lista é uma estrutura de dados:</p>
+                    <ul>
+                        <li>Homogênea (dados do mesmo tipo)</li>
+                        <li>Ordenada (elementos acessados por meio de posições)</li>
+                        <li>Inicia vazia, e seus elementos são alocados sob demanda</li>
+                        <li>Cada elemento ocupa um “nó” (ou nodo) da lista</li>
+                    </ul>
+                </section>
+            </section>
+
+            <!-- DECLARAÇÃO E INICIALIZAÇÃO DE LISTAS -->
+            <section>
+                <h3>Declaração e inicialização de Listas</h3>
+
+                <p style="text-align: left;">Usando o construtor do List:</p>
+                <pre style="margin: 0;"><code class="language-csharp" data-trim data-noescape data-line-numbers>List<int> numbers = new List<int>();</code></pre><br>
+
+                <p style="text-align: left;">Usando Collection Initializers:</p>
+                <pre style="margin: 0;"><code class="language-csharp" data-trim data-noescape data-line-numbers>List<string> fruits = new List<string> { "Apple", "Banana", "Orange" };</code></pre>
+            </section>
+
+            <!-- PRINCIPAIS MÉTODOS E PROPRIEDADES DAS LISTAS -->
+            <section>
+                <section>
+                    <h3 style="font-size: 35px;">Principais métodos e propriedades das Listas</h3>
+                    <div style="display: flex; justify-content: space-around;">
+                        <ul>
+                            <li>Add()</li><br>
+                            <li>AddRange()</li><br>
+                            <li>AsReadOnly()</li><br>
+                            <li>Capacity e Count</li><br>
+                            <li>Find()</li><br>
+                            <li>FindAll()</li>
+                        </ul>
+
+                        <ul>
+                            <li>Remove()</li><br>
+                            <li>RemoveAt()</li><br>
+                            <li>RemoveRange()</li><br>
+                            <li>Sort()</li><br>
+                            <li>ToArray()</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h3 style="font-size: 35px;">Principais métodos e propriedades das Listas</h3>
+                    <pre><code class="language-csharp" data-trim data-noescape data-line-numbers="1-39|1-3|5-7|9-10|12-14|16-18|20-21|23-24|26-27|29-30|32-36|38-39">//Add()
+List<string> fruits = new List<string> { "Apple", "Banana", "Orange" };
+fruits.Add("Grape");
+
+//AddRange()
+List<string> moreFruits = new List<string> { "Mango", "Pineapple" };
+fruits.AddRange(moreFruits);
+
+//AsReadOnly()
+ReadOnlyCollection<string> readOnlyFruits = fruits.AsReadOnly();
+
+//Capacity e Count
+int count = fruits.Count;
+int capacity = fruits.Capacity;
+
+//Find()
+List<int> numbers = new List<int> { 8, 2, 6, 4, 1 };
+int evenNumber = numbers.Find(x => x % 2 == 0); // Finds the first even number
+
+//FindAll()
+List<int> evenNumbers = numbers.FindAll(x => x % 2 == 0); // Finds all even numbers
+
+//Remove()
+fruits.Remove("Banana");
+
+//RemoveAt()
+fruits.RemoveAt(1); // Removes the second element
+
+//RemoveRange()
+fruits.RemoveRange(1, 2); // Removes the second and third elements
+
+//Sort()
+numbers.Sort();
+
+List<string> names = new List<string> { "Alice", "Bob", "Charlie" };
+names.Sort((x, y) => x.Length.CompareTo(y.Length)); // Sorts by string length
+
+//ToArray()
+string[] fruitsArray = fruits.ToArray();</code></pre>
+                </section>
+            </section>
+
+            <!-- VANTAGENS E DESVANTAGENS DAS LISTAS -->
+            <section>
+                <h3>Vantagens e desvantagens das Listas</h3>
+                <br>
+                <div style="display: flex; justify-content: space-between;">
+                    <div>
+                        <p style="background: #99BF2B; color: white !important; margin: 0;">
+                            Vantagens
+                        </p>
+                        <ul>
+                            <li>Tamanho variável</li>
+                            <li>Facilidade para se realizar inserções e deleções</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <p style="background: #E75847; color: white !important; margin: 0;">
+                            Desvantagens
+                        </p>
+                        <ul>
+                            <li>Acesso sequencial aos elementos</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CONTEÚDO SUGERIDO -->
+            <section>
+                <h3>Conteúdo sugerido</h3><br>
+                <i class="fa-solid fa-link" style="color: #2a76dd;"></i>
+                <a href="https://jrobertoaraujo.medium.com/dotnet-internals-alocacao-de-memoria-em-listas-e-arrays-no-csharp-125cf10bbbdc">
+                    Alocação de Memória em Listas e Arrays no C#
+                </a>
+            </section>
+
+            <!-- BÔNUS - LIST PATTERNS MATCHING -->
+            <section>
+                <section>
+                    <h3>Bônus - List Patterns Matching</h3>
+                    <ul>
+                        <li>Discard pattern ou Padrão Descartar</li>
+                    </ul>
+                    <pre><code class="language-csharp" data-trim data-noescape data-line-numbers>
+                        int[] fibonacci = { 1, 2, 3, 5, 8 };
+
+                        bool resultado = false;
+                        
+                        resultado = fibonacci is [_, _, 3, _];    // False -> tamanho não corresponde
+                        
+                        resultado = fibonacci is [_, _, _, 3, _]; // False -> o 3 não está na mesma posição
+                        
+                        resultado = fibonacci is [2, _, 3, _, _]; // False -> tamanho corresponde mas 2 e 3 não estão na mesma posição
+                        
+                        resultado = fibonacci is [1, _, _, _, _]; // True -> posição e tamanho correspondem
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Bônus - List Patterns Matching</h3>
+                    <ul>
+                        <li>Range pattern ou Padrão de intervalo</li>
+                    </ul>
+
+                    <pre><code class="language-csharp" data-trim data-noescape data-line-numbers>
+                        int[] fibonacci = { 1, 2, 3, 5, 8 };
+
+                        bool resultado = false;
+                        
+                        resultado = fibonacci is [.., 8]; // True -> a lista termina com 8
+                        
+                        resultado = fibonacci is [.., 3, _]; // False -> 3 não é o penúltimo elemento
+                        
+                        resultado = fibonacci is [1, .., 8]; // True -> a lista inicia com 1 e termina com 8
+                        
+                        resultado = fibonacci is [.., < 8]; // False -> o último elemento é exatamente 8
+                        
+                        resultado = fibonacci is [.., >= 3, _, _]; // True -> 3 é o terceiro elemento do final
+                        
+                        resultado = fibonacci is [> 1, .., 8]; // False -> o primeiro elemento não é maior que 1
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h3>Bônus - List Patterns Matching</h3>
+                    <ul>
+                        <li>Var pattern ou Padrão de var</li>
+                    </ul>
+
+                    <pre><code class="language-csharp" data-trim data-noescape data-line-numbers="1-14|16-25">
+                        // Padrão corresponde
+                        int[] fibonacci = { 1, 2, 3, 5, 8 };
+                        
+                        if (fibonacci is [.., var penultimo, var ultimo])
+                        {
+                            Console.WriteLine($"penúltimo = {penultimo}");
+                            Console.WriteLine($"último = {ultimo}");
+                        }
+                        else
+                            Console.WriteLine("O padrão não corresponde!");
+                        
+                        // Resultado:
+                        // penúltimo = 5
+                        // último = 8 
+                        
+                        // Padrão não corresponde
+                        int[] minhaLista = { 1 };
+                        
+                        if (minhaLista is [var primeiro, var segundo, ..])
+                        {
+                            Console.WriteLine($"primeiro = {primeiro}");
+                            Console.WriteLine($"segundo = {segundo}");
+                        }
+                        else
+                            Console.WriteLine("O padrão não corresponde!");
+                    </code></pre>
+                </section>
+            </section>
+
+            <!-- REFERÊNCIAS -->
+            <section>
+                <h3>Referências</h3>
+                <ul style="font-size: 30px;">
+                    <li><a href="https://jrobertoaraujo.medium.com/dotnet-internals-alocacao-de-memoria-em-listas-e-arrays-no-csharp-125cf10bbbdc">Alocação de Memória em Listas e Arrays no C#</a></li>
+                    <li><a href="http://www.linhadecodigo.com.br/artigo/3444/arrays-em-csharp-teoria-e-pratica.aspx">Arrays em C# - Teoria e prática</a></li>
+                    <li><a href="https://www.bytehide.com/blog/array-csharp">Arrays in C#: In-Depth Guide with Examples</a></li>
+                    <li><a href="https://balta.io/blog/arrays-monodimensionais-e-multidimensionais-no-csharp">Arrays monodimensionais e multidimensionais no C#</a></li>
+                    <li><a href="https://macoratti.net/22/11/c11_listpattern1.htm">C# 11 - List Patterns Matching</a></li>
+                    <li><a href="https://frikishaan.com/blog/c-sharp-array-methods">C# Array Methods | Ishaan Sheikh (frikishaan.com)</a></li>
+                    <li><a href="https://www.bytehide.com/blog/array-vs-list-csharp">C# Array vs List: Differences & Performance</a></li>
+                    <li><a href="https://www.alura.com.br/conteudo/csharp-collections">C# Collections parte 1: Listas, arrays, listas ligadas, dicionários e conjuntos</a></li>
+                    <li><a href="https://www.udemy.com/course/programacao-orientada-a-objetos-csharp">C# COMPLETO Programação Orientada a Objetos + Projetos</a></li>
+                    <li><a href="https://www.wikitechy.com/tutorials/csharp/csharp-jagged-array">C# Jagged array</a></li>
+                    <li><a href="https://www.educba.com/c-sharp-list-vs-array/">C# List vs Array</a></li>
+                    <li><a href="https://www.bytehide.com/blog/list-csharp">Lists in C#: A Guide to Dynamic Data Storage</a></li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <script src="dist/reveal.js "></script>
+    <script src="plugin/notes/notes.js "></script>
+    <script src="plugin/markdown/markdown.js "></script>
+    <script src="plugin/highlight/highlight.js "></script>
+    <script src="plugin/zoom/zoom.js "></script>
+    <script src="plugin/mouse-pointer/mouse-pointer.js "></script>
+    <script src="plugin/pointer/pointer.js"></script>
+    <script>
+        // More info about initialization & config:
+        // - https://revealjs.com/initialization/
+        // - https://revealjs.com/config/
+        Reveal.initialize({
+            hash: true,
+            margin: 0,
+            // Learn about plugins: https://revealjs.com/plugins/
+            plugins: [RevealMarkdown, RevealHighlight, RevealNotes, RevealZoom, RevealPointer]
+        });
+    </script>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+</body>
+
+</html>
